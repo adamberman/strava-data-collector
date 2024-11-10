@@ -16,7 +16,6 @@ class StravaActivity():
             json_blob["moving_time"],
             json_blob["elapsed_time"],
             json_blob["total_elevation_gain"],
-            json_blob["type"],
             json_blob["sport_type"],
             json_blob["id"],
             json_blob["start_date"],
@@ -36,7 +35,6 @@ class StravaActivity():
         moving_time: int,
         elapsed_time: int,
         total_elevation_gain: float,
-        stype: str,
         sport_type: str,
         id: int,
         start_date: str,
@@ -54,7 +52,6 @@ class StravaActivity():
         self.moving_time = moving_time
         self.elapsed_time = elapsed_time
         self.total_elevation_gain = total_elevation_gain
-        self.type = stype
         self.sport_type = sport_type
         self.id = id
         self.start_date = start_date
