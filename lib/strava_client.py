@@ -64,6 +64,9 @@ class StravaActivity():
         self.max_heartrate = max_heartrate
         self.suffer_score = suffer_score
 
+    def to_dict(self) -> dict:
+        self.__dict__
+
 class StravaClient():
     def __init__(self, config: StravaConfig) -> None:
         self.config = config
@@ -82,7 +85,7 @@ class StravaClient():
         )
         self.access_token = response.json()["access_token"]
 
-    def get_all_activities(self) -> List[StravaActivity]:
+    def get_all_activities(self, format: str="dict") -> List[StravaActivity]:
         current = []
         page = 1
         next_activities = self.get_activities(page)
