@@ -21,7 +21,7 @@ def main():
     )
     client.invoke(
         FunctionName="arn:aws:lambda:us-east-2:651706778051:function:strava-database-insert",
-        Payload=json.dumps([a.to_dict for a in activities])
+        Payload=json.dumps([a.to_dict() for a in activities])
     )
     print("done")
 
