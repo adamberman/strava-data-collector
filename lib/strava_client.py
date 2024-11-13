@@ -65,7 +65,7 @@ class StravaActivity():
         self.suffer_score = suffer_score
 
     def to_dict(self) -> dict:
-        self.__dict__
+        return self.__dict__
 
 class StravaClient():
     def __init__(self, config: StravaConfig) -> None:
