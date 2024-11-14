@@ -48,21 +48,21 @@ class StravaActivity():
         suffer_score: float,
     ) -> None:
         self.name = name
-        self.distance = distance
-        self.moving_time = moving_time
-        self.elapsed_time = elapsed_time
-        self.total_elevation_gain = total_elevation_gain
+        self.distance = str(distance)
+        self.moving_time = str(moving_time)
+        self.elapsed_time = str(elapsed_time)
+        self.total_elevation_gain = str(total_elevation_gain)
         self.sport_type = sport_type
         self.id = id
         self.start_date = start_date
         self.start_date_local = start_date_local
         self.utc_offset = utc_offset
-        self.average_speed = average_speed
-        self.max_speed = max_speed
+        self.average_speed = str(average_speed)
+        self.max_speed = str(max_speed)
         self.has_heartrate = has_heartrate
-        self.average_heartrate = average_heartrate
-        self.max_heartrate = max_heartrate
-        self.suffer_score = suffer_score
+        self.average_heartrate = str(average_heartrate)
+        self.max_heartrate = str(max_heartrate)
+        self.suffer_score = str(suffer_score)
 
     def to_dict(self) -> dict:
         return self.__dict__
@@ -85,7 +85,7 @@ class StravaClient():
         )
         self.access_token = response.json()["access_token"]
 
-    def get_all_activities(self, format: str="dict") -> List[StravaActivity]:
+    def get_all_activities(self) -> List[StravaActivity]:
         current = []
         page = 1
         next_activities = self.get_activities(page)
